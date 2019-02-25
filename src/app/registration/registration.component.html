@@ -1,0 +1,98 @@
+<form>
+  <div>
+    <!-- First Name -->
+    <mat-form-field class="form-group">
+        <input matInput placeholder="First Name" [formControl]="firstName"
+                [errorStateMatcher]="matcher"/>
+          <mat-error *ngIf="firstName.hasError('required')">
+            FirstName is <strong>required</strong>
+          </mat-error>
+      </mat-form-field>
+  </div>
+      
+<div>
+  <!-- LastName -->
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Last Name" [formControl]="lastName"
+             [errorStateMatcher]="matcher"/>
+      <mat-error *ngIf="lastName.hasError('required')">
+        LastName is <strong>required</strong>
+      </mat-error>
+</mat-form-field>
+</div>
+<div>
+   <!-- Email -->
+   <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email" [formControl]="email"
+             [errorStateMatcher]="matcher"/>
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+</div>
+<div>
+  <!-- DOB -->
+  <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date"  [formControl]="dob"
+      [errorStateMatcher]="matcher"/>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="dob.hasError('required')">
+          DOB is <strong>required</strong>
+        </mat-error>
+  </mat-form-field>
+</div>
+<div>
+   <!-- Password -->
+   <mat-form-field class="example-full-width">
+      <input matInput placeholder="Password" [formControl]="password"
+             [errorStateMatcher]="matcher"/>
+      <mat-error *ngIf="password.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+</mat-form-field>
+</div>
+<div>
+   <!-- Confirm Password -->
+   <mat-form-field class="example-full-width">
+      <input matInput placeholder="Confirm Password" [formControl]="confirmPassword"
+             [errorStateMatcher]="matcher"/>
+      <mat-error *ngIf="confirmPassword.hasError('required')">
+        Confirm Password is <strong>required</strong>
+      </mat-error>
+</mat-form-field>
+</div>
+     <div>
+        <!-- Gender -->
+    <mat-radio-group>
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="others">Others</mat-radio-button>
+    </mat-radio-group>
+     </div>
+     <div>
+        <!-- Address -->
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Address" [formControl]="address"
+            [errorStateMatcher]="matcher"></textarea>
+        <mat-error *ngIf="address.hasError('required')">
+          Address is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+     </div>
+     <div>
+         <!-- Pickup Address -->
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Preferred Address" [formControl]="pickupAddress"
+          [errorStateMatcher]="matcher"></textarea>
+        <mat-error *ngIf="pickupAddress.hasError('required')">
+          Pickup Address is <strong>required</strong>
+         </mat-error>
+    </mat-form-field>
+     </div>
+      <button (click)="onClick($event)">SignUp</button>
+
+  </form>
