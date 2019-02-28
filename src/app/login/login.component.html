@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>Connection</mat-card-title>
+  <mat-card-content>
+
+    <form (ngSubmit)="loginSubmit()" class="login-form">
+        <mat-error><strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong></mat-error>
+        <mat-form-field class="login-field-full-width">
+          <!-- <input matInput formControlName='username' required placeholder="username" name="username"> -->
+          <input class="username" matInput [formControl]='username'>
+          <mat-error *ngIf="username.hasError('required')">    
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field class="login-field-full-width">
+          <!-- <input matInput formControlName='password' required placeholder="password" name="password"> -->
+          <input class="password" matInput type = 'password' [formControl]='password'>
+            <mat-error *ngIf="password.hasError('required')">
+            </mat-error>
+        </mat-form-field>
+        
+        <!-- <button mat-raised-button class="btn btn-primary">login</button> -->
+        <button type="submit" mat-button >Submit</button>
+      </form>
+
+
+  </mat-card-content>
+</mat-card>
