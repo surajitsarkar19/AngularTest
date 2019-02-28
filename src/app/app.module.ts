@@ -3,15 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatNativeDateModule} from '@angular/material';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatNativeDateModule, MatGridListModule, MatCardModule} from '@angular/material';
+import { MatDatepickerModule} from '@angular/material/datepicker';
 import { RegistrationComponent } from './registration/registration.component';
+import { RegisterEventComponent } from './register-event/register-event.component';
+import { EventCardComponent } from './event-card/event-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    RegisterEventComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { RegistrationComponent } from './registration/registration.component';
     MatInputModule,
     MatDatepickerModule,
     MatRadioModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
