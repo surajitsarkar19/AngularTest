@@ -1,0 +1,6 @@
+<div *ngIf="events" class="event-container">
+
+<!-- Include the notes collection with each note rendered as a separate NoteComponent -->
+
+<app-event *ngFor="let n of events" [event]="n"></app-event>
+</div>
