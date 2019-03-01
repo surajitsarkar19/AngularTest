@@ -38,4 +38,7 @@ export class LoginComponent {
 
       );
     }
+    redirectToRegister() : void{
+      this.router.navigateByUrl('registration');
+    }
 }
