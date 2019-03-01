@@ -3,20 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatNativeDateModule, MatGridListModule, MatCardModule} from '@angular/material';
-import { MatDatepickerModule} from '@angular/material/datepicker';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { EventViewComponent } from './event-view/event-view.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { RegisterEventComponent } from './register-event/register-event.component';
 import { EventCardComponent } from './event-card/event-card.component';
-import { EventComponent } from './event/event.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatNativeDateModule, MatFormFieldModule, MatGridListModule} from '@angular/material';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { RegistrationComponent } from './registration/registration.component';    
+import {MatCardModule} from '@angular/material/card';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule } from '@angular/common/http';
 import {AuthenticationService} from '../app/services/authentication.service';
-
-
+import { EventComponent } from './event/event.component';
+import { EventViewComponent } from './event-view/event-view.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,12 +25,11 @@ import {AuthenticationService} from '../app/services/authentication.service';
     RegistrationComponent,
     RegisterEventComponent,
     EventCardComponent,
-    EventComponent
-  ],
+    EventComponent,
+    ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
+    AppRoutingModule,    
     MatButtonModule,
     MatCheckboxModule,
     FormsModule,
@@ -40,9 +38,13 @@ import {AuthenticationService} from '../app/services/authentication.service';
     MatDatepickerModule,
     MatRadioModule,
     MatNativeDateModule,
-    MatGridListModule,
-    MatCardModule,
-    HttpClientModule
+    MatCardModule, 
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatGridListModule    
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]
