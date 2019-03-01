@@ -9,28 +9,33 @@ import {ErrorStateMatcher} from '@angular/material/core';
 })
 export class RegistrationComponent implements OnInit {
 
+  firstName=new FormControl('', [Validators.required]);
+  lastName=new FormControl('', [Validators.required]);
+  email=new FormControl('', [Validators.required]);
+  password=new FormControl('', [Validators.required]);
+  confirmPassword=new FormControl('', [Validators.required]);
+  gender=new FormControl('', [Validators.required]);
+  permanentAddress=new FormControl('', [Validators.required]);
+  pickupAddress=new FormControl('', [Validators.required]);
+
+  submitMessage: string;
+
   constructor() { }
   ngOnInit() {}
+ 
+  doRegistration(){
 
-  firstName = new FormControl();
-  lastName = new FormControl();
-  email = new FormControl();
-  password = new FormControl();
-  confirmPassword = new FormControl();
-  dob = new FormControl();
-  gender = new FormControl();
-  address = new FormControl();
-  pickupAddress = new FormControl();
-  matcher = new MyErrorStateMatcher();
-
-  onClick(event : any){
-    console.log(event);
-  }
-}
-
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
+    const userObject = {
+      'firstName': this.firstName.value,
+      'lastName': this.lastName.value,
+      'email': this.email.value,
+      'password': this.password.value,
+      'confirmPassword': this.confirmPassword.value,
+      'gender' : this.gender.value,
+      'permanentAddress' : this.permanentAddress.value,
+      'pickupAddress': this.pickupAddress.value
+    }
+     console.log(userObject);
+ }
+  
 }

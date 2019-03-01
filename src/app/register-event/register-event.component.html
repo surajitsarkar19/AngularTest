@@ -1,0 +1,105 @@
+<!-- <mat-card>
+  <mat-card-title>Connection</mat-card-title>
+  <mat-card-content> -->
+
+    <form (ngSubmit)="eventRegistration()" class="take-note-form">
+      <mat-error><strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong></mat-error>
+      <div>
+        <mat-form-field class="note-field-full-width">
+          <input placeholder="Event Name" matInput [formControl]='eventName'>
+          <mat-error *ngIf="eventName.hasError('required')">  Please enter a valid email address 
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+       <mat-form-field class="note-field-full-width">
+          <textarea placeholder="Event Description" matInput [formControl]='eventDesc'></textarea>
+          <mat-error *ngIf="eventDesc.hasError('required')">   
+          </mat-error>
+        </mat-form-field>
+      </div>
+      
+      <div>
+        <mat-form-field class="note-field-full-width">
+          <input placeholder="Start Time" matInput [formControl]='startTime'>
+          <mat-error *ngIf="startTime.hasError('required')">   
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="note-field-full-width">
+          <input placeholder="End Time" class="password" matInput [formControl]='endTime'>
+            <mat-error *ngIf="endTime.hasError('required')">
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="note-field-full-width">
+          <input placeholder="Event Location" matInput  [formControl]='eventLocation'>
+            <mat-error *ngIf="eventLocation.hasError('required')">
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="note-field-full-width">
+          <textarea placeholder="Pickup Address" matInput [formControl]='pickupAddress'></textarea>
+          <mat-error *ngIf="pickupAddress.hasError('required')">   
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="note-field-full-width">
+          <input placeholder="Travel Duration" matInput [formControl]='travelDuration'>
+          <mat-error *ngIf="travelDuration.hasError('required')">   
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- <div>
+        <mat-form-field>
+          <mat-select [(value)]="selected" [formControl]="transportType">
+            <mat-option>None</mat-option>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <p>You selected: {{selected}}</p>
+      </div> -->
+
+      <div>
+        <mat-form-field class="note-field-full-width">
+          <input placeholder="Volenteer Required" matInput [formControl]='volenteerRequired'>
+          <mat-error *ngIf="volenteerRequired.hasError('required')">   
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="note-field-full-width">
+          <textarea placeholder="Event Status" matInput [formControl]='eventStatus'></textarea>
+          <mat-error *ngIf="eventStatus.hasError('required')">   
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="note-field-full-width">
+          <textarea placeholder="Point of Contact" matInput [formControl]='poc'></textarea>
+          <mat-error *ngIf="poc.hasError('required')">   
+          </mat-error>
+        </mat-form-field>
+      </div>
+        <!-- <button mat-raised-button class="btn btn-primary">login</button> -->
+        <button type="submit" mat-button >Register Event</button>
+      </form>
+
+
+  <!-- </mat-card-content>
+</mat-card> -->
