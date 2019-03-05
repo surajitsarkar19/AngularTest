@@ -11,21 +11,16 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { RegistrationComponent } from './registration/registration.component';    
 import {MatCardModule} from '@angular/material/card';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule } from '@angular/common/http';
-import {AuthenticationService} from '../app/services/authentication.service';
-import { EventComponent } from './event/event.component';
-import { EventViewComponent } from './event-view/event-view.component'
+
+import {CoreModule} from "./core"
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
-    EventViewComponent,
     RegistrationComponent,
     RegisterEventComponent,
     EventCardComponent,
-    EventComponent,
     ],
   imports: [
     BrowserModule,
@@ -44,9 +39,11 @@ import { EventViewComponent } from './event-view/event-view.component'
     MatInputModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatGridListModule    
+    MatGridListModule,
+    
+    CoreModule
   ],
-  providers: [AuthenticationService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
