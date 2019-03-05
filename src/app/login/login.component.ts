@@ -21,6 +21,7 @@ export class LoginComponent {
       'password' : this.password.value
      
     };
+    console.log("login");
     //this.router.navigateByUrl('dashboard');
     console.log(this.username.value);
       this.authenticationService.authenticateUser( user ).subscribe(

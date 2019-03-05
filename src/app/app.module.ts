@@ -15,7 +15,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule } from '@angular/common/http';
 import {AuthenticationService} from '../app/services/authentication.service';
 import { EventComponent } from './event/event.component';
-import { EventViewComponent } from './event-view/event-view.component'
+import { EventViewComponent } from './event-view/event-view.component';
+import { NavbarComponent } from './navbar/navbar.component'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +29,7 @@ import { EventViewComponent } from './event-view/event-view.component'
     RegisterEventComponent,
     EventCardComponent,
     EventComponent,
+    NavbarComponent,
     ],
   imports: [
     BrowserModule,
