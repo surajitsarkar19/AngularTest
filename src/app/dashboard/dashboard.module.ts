@@ -7,12 +7,14 @@ import {MatCardModule} from '@angular/material/card';
 import {DashboardComponent} from "./dashboard.component"
 import { EventComponent } from './event/event.component';
 import { EventViewComponent } from './event-view/event-view.component'
+import { NavbarComponent } from '../navbar/navbar.component'
 
 @NgModule({
   declarations: [
     DashboardComponent,
     EventViewComponent,
     EventComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule,
