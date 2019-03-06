@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -20,7 +21,7 @@ export class RegistrationComponent implements OnInit {
 
   submitMessage: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
   ngOnInit() {}
  
   doRegistration(){
@@ -36,6 +37,7 @@ export class RegistrationComponent implements OnInit {
       'pickupAddress': this.pickupAddress.value
     }
      console.log(userObject);
+     this.router.navigateByUrl('dashboard');
  }
   
 }
