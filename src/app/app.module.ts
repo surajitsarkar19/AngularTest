@@ -11,7 +11,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { RegistrationComponent } from './registration/registration.component';    
 import {MatCardModule} from '@angular/material/card';
 import { LoginComponent } from './login/login.component';
-import {HttpClientModule } from '@angular/common/http';
 
 import {CoreModule} from "./core"
 @NgModule({
@@ -38,7 +37,6 @@ import {CoreModule} from "./core"
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
-    HttpClientModule,
     MatGridListModule,
     
     CoreModule
