@@ -1,27 +1,19 @@
-<mat-card>
-  <mat-card-title>Connection</mat-card-title>
-  <mat-card-content>
-
-    <form (ngSubmit)="loginSubmit()" class="login-form">
-        <mat-error><strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong></mat-error>
-        <mat-form-field class="login-field-full-width">
-          <!-- <input matInput formControlName='username' required placeholder="username" name="username"> -->
-          <input class="username" matInput [formControl]='username'>
-          <mat-error *ngIf="username.hasError('required')">    
-          </mat-error>
-        </mat-form-field>
-        
-        <mat-form-field class="login-field-full-width">
-          <!-- <input matInput formControlName='password' required placeholder="password" name="password"> -->
-          <input class="password" matInput type = 'password' [formControl]='password'>
-            <mat-error *ngIf="password.hasError('required')">
-            </mat-error>
-        </mat-form-field>
-        
-        <!-- <button mat-raised-button class="btn btn-primary">login</button> -->
-        <button type="submit" mat-button >Submit</button>
+<div class="w-75 p-3" style="background-color: rgb(255, 255, 255);">
+  <div class="card border-dark mb-3">
+    <div class="card-header">Vortex</div>
+    <div class="card-body">
+      <form (ngSubmit)="loginSubmit()">
+        <div class="form-group">
+          <label for="txtUserName">User Name</label>
+          <input id="txtUserName"type="email" class="form-control" [formControl]='username' placeholder="Username"/>
+        </div>
+        <div class="form-group">
+          <label for="txtPassword">Password</label>
+          <input id="txtPassword"type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [formControl]='Password'/>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-success float-right" (click)="redirectToRegister()">Register Here</button>
       </form>
-
-
-  </mat-card-content>
-</mat-card>
+    </div>
+  </div>
+</div>

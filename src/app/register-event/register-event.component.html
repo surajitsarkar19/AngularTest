@@ -1,0 +1,48 @@
+<div class="w-75 p-3" style="background-color: rgb(255, 255, 255);">
+<div class="card border-dark mb-3">
+  <div class="card-header">Event Registration</div>
+  <div class="card-body text-dark">
+  <form (ngSubmit)="eventRegistration()" class="take-note-form">
+      <mat-error><strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong></mat-error>
+      <div class="form-group">
+          <input id="txtEventname" [formControl]='eventName' class="form-control" placeholder="Event Name">
+      </div>
+	  <div class="form-group">
+          <input id="txtEventDescription" [formControl]='eventDescription' class="form-control" placeholder="Event Description">
+      </div>
+      <div class="form-group">
+          <input id="txtStartTime" [formControl]='startTime' class="form-control" placeholder="Start Time">
+      </div>
+	  <div class="form-group">
+          <input id="txtEndTime" [formControl]='endTime' class="form-control" placeholder="End Time">
+      </div>
+	  <div class="form-group">
+        <label for="exampleFormControlSelect1">Event Location</label>
+			<select class="form-control" id="exampleFormControlSelect1">
+			  <option>1</option>
+			  <option>2</option>
+			  <option>3</option>
+			  <option>4</option>
+			  <option>5</option>
+			</select>
+      </div>
+	  <div class="form-group">
+           <textarea class="form-control" id="txtPickupAddress" [formControl]='pickupAddress' placeholder="Pickup Address" rows="3"></textarea>
+      </div>
+	  <div class="form-group">
+          <input id="txtTravelDuration" [formControl]='travelDuration' class="form-control" placeholder="Travel Duration">
+      </div>
+	  <div class="form-group">
+          <input id="txtVolenteerRequired" [formControl]='volenteerRequired' class="form-control" placeholder="Travel Duration">
+      </div>
+	  <div class="form-group">
+          <input id="txtEventStatus" [formControl]='eventStatus' class="form-control" placeholder="Event Status">
+      </div>
+      <div class="form-group">
+          <input id="txtpointOfContuct" [formControl]='pointOfContuct' class="form-control" placeholder="Point Of Contuct">
+      </div>
+      <button type="submit" class="btn btn-primary float-right">Register Event</button>
+      </form>
+  </div>
+ </div>
+</div>

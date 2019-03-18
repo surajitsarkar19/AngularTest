@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { AuthenticationService } from '../services/authentication.service';
+import { AuthenticationService } from '../core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -21,6 +21,7 @@ export class LoginComponent {
       'password' : this.password.value
      
     };
+    console.log("login");
     //this.router.navigateByUrl('dashboard');
     console.log(this.username.value);
       this.authenticationService.authenticateUser( user ).subscribe(
@@ -37,5 +38,8 @@ export class LoginComponent {
         }
 
       );
+    }
+    redirectToRegister() : void{
+      this.router.navigateByUrl('registration');
     }
 }
